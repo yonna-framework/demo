@@ -1,0 +1,8 @@
+{
+    "name": "hunzsig/phpure",
+    "description": "pure php project",
+    "license": "MIT",
+    "require": {
+        "php-amqplib/php-amqplib": "2.9.*"
+    }
+}
