@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-$core = new Dotenv();
-var_dump($core);
+$Dotenv = Dotenv\Dotenv::create(__DIR__);
+$Dotenv->load();
+
 var_dump(getenv('APP_NAME'));
