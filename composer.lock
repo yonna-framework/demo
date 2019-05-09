@@ -4,8 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bee4ff2e78d68a69dc0701c486838ae6",
+    "content-hash": "d63111f9c4aaa58475d78a2c6303a2f2",
     "packages": [
+        {
+            "name": "hunzsig-server/phpure-core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hunzsig-server/phpure-core.git",
+                "reference": "7e5771719a1318eece7b6493f1e51be01f87b450"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hunzsig-server/phpure-core/zipball/7e5771719a1318eece7b6493f1e51be01f87b450",
+                "reference": "7e5771719a1318eece7b6493f1e51be01f87b450",
+                "shasum": ""
+            },
+            "require": {
+                "php-amqplib/php-amqplib": "2.9.*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "hunzsig",
+                    "email": "mzyhaohaoren@qq.com",
+                    "homepage": "https://www.hunzsig.com"
+                }
+            ],
+            "description": "core of phppure",
+            "keywords": [
+                "framework",
+                "php",
+                "swoole"
+            ],
+            "time": "2019-05-09T01:57:00+00:00"
+        },
         {
             "name": "php-amqplib/php-amqplib",
             "version": "v2.9.2",
@@ -84,9 +121,13 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "hunzsig-server/phpure-core": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.3"
+    },
     "platform-dev": []
 }

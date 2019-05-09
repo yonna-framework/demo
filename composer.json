@@ -1,8 +1,22 @@
 {
-    "name": "hunzsig/phpure",
-    "description": "pure php project",
-    "license": "MIT",
-    "require": {
-        "php-amqplib/php-amqplib": "2.9.*"
+  "name": "hunzsig/phpure",
+  "description": "A php project: pure",
+  "license": "MIT",
+  "version": "0.0.1",
+  "type": "project",
+  "keywords": [
+    "php",
+    "framework-demo"
+  ],
+  "require": {
+    "php": ">=7.3",
+    "hunzsig-server/phpure-core": "dev-master"
+  },
+  "authors": [
+    {
+      "name": "hunzsig",
+      "email": "mzyhaohaoren@qq.com",
+      "homepage": "https://www.hunzsig.com"
     }
+  ]
 }
