@@ -1,0 +1,65 @@
+// 这里只是其中一个模板的例子，具体参数，请参考模板而定
+$params = array(
+    "touser"        =>'OPENID', // openid
+    "template_id"   =>"TEMPLATE_ID", // 模板id，具体请参考公众号设定
+    "url"           =>"http://xxxxxxxxxxxxxxxxxxxxxxxxxx", // 消息点击的跳转地址
+    "data"          =>array(
+        "first" => array(
+            "value"=>'1',
+            "color"=>"#e04240",
+        ),
+        "keyword1" => array(
+            "value"=>'1',
+            "color"=>"#e04240",
+        ),
+        "keyword2" => array(
+            "value"=>'1',
+            "color"=>"#e04240",
+        ),
+        "keyword3" => array(
+            "value"=>'1',
+            "color"=>"#e04240",
+        ),
+        "remark" => array(
+            "value"=>'1',
+            "color"=>"#666666",
+        ),
+    )
+);
+$params = json_encode($params);
+
+// 常规用法
+$wb = (new WxmpBean());
+$wm = (new WxmpModel());
+$wb->setExternalConfig('1'); // ! config
+$wb->setTemplateMsgParams(json_encode(array( // ! json encode
+    "touser"        =>'OPENID',
+    "template_id"   =>"TEMPLATE_ID",
+    "url"           =>"http://xxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "data"          =>array(
+        "first" => array(
+            "value"=>'1',
+            "color"=>"#e04240",
+        ),
+        "keyword1" => array(
+            "value"=>'1',
+            "color"=>"#e04240",
+        ),
+        "keyword2" => array(
+            "value"=>'1',
+            "color"=>"#e04240",
+        ),
+        "keyword3" => array(
+            "value"=>'1',
+            "color"=>"#e04240",
+        ),
+        "remark" => array(
+            "value"=>'1',
+            "color"=>"#666666",
+        ),
+    )
+)));
+$result = $wm->templateMsg__($wb);
+if(!$result){
+    exit($wm->getFalseMsg());
+}
