@@ -3,10 +3,12 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use PhpureCore\Bootstrap;
+use PhpureCore\Bootstrap\Creator;
 
-$Dotenv = Dotenv\Dotenv::create(__DIR__);
-$Dotenv->load();
-
-dump($_SERVER,$_SERVER);
-
-var_dump(getenv('APP_NAME'));
+$Creator = (new Creator());
+$Creator->setRoot(realpath(__DIR__));
+$Creator->setEnv(true);
+$Creator->setDebug(true);
+$Creator->setTimezone('PRC');
+$Bootstrap = new Bootstrap($Creator);
+$Bootstrap->start();
