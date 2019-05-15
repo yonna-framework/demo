@@ -8,13 +8,12 @@
  */
 require __DIR__ . '/vendor/autoload.php';
 
-use PhpureCore\Bootstrap;
-use PhpureCore\Bootstrap\Creator;
-
-$Creator = (new Creator());
+// boot
+$Creator = (new PhpureCore\Bootstrap\Creator());
 $Creator->setRoot(realpath(__DIR__));
-$Creator->setEnv(true);
-$Creator->setDebug(true);
-$Creator->setTimezone('PRC');
-$Bootstrap = new Bootstrap($Creator);
-$Bootstrap->start();
+$Creator->setEnv(true); // default: true
+$Creator->setDebug(true); // default: false; 除了 creator 你也可以在 .env 设定
+$Bootstrap = new PhpureCore\Bootstrap($Creator);
+$Bootstrap->io();
+
+var_dump('end');
