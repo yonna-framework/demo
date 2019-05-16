@@ -11,7 +11,7 @@ require __DIR__ . '/vendor/autoload.php';
 // boot
 $Creator = (new PhpureCore\Bootstrap\Creator());
 $Creator->setRoot(realpath(__DIR__));
-$Creator->setEnv(true); // default: true
+$Creator->setEnv('.env.dev'); // default: .env
 $Creator->setDebug(true); // default: false; 除了 creator 你也可以在 .env 设定
 $Bootstrap = new PhpureCore\Bootstrap($Creator);
 $Bootstrap->io();
