@@ -25,7 +25,7 @@ class ScopeModel extends AbstractModel {
     }
 
     public function getList(){
-        $path = realpath(__DIR__.'/../../');
+        $path = realpath(__DIR__ . '/../scope/');
         $model = $this->scanModel($path);
         $activeDir = str_replace('\\', '/', $path);
         $scope = array();
