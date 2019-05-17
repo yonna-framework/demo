@@ -6,7 +6,7 @@ use PhpureCore\IO\Request;
 Scope::get('test', function (Request $request) {
     echo '666666';
 });
-Scope::get('', function (Request $request) {
+Scope::get('test', function (Request $request) {
     echo '777777';
 });
 

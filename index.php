@@ -8,12 +8,15 @@
  */
 require __DIR__ . '/vendor/autoload.php';
 
+use PhpureCore\Bootstrap\Type;
+
 // boot
 $Creator = (new PhpureCore\Bootstrap\Creator());
 $Creator->setRoot(realpath(__DIR__));
 $Creator->setEnv('example'); // default: example
 $Creator->setDebug(true); // default: false; 除了 creator 你也可以在 .env 设定
 $Bootstrap = new PhpureCore\Bootstrap($Creator);
+$Bootstrap->setType(Type::AJAX_HTTP);
 $Bootstrap->io();
 
 var_dump('end');
