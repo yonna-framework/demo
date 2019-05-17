@@ -10,7 +10,7 @@
  * @param string $encoding 数据编码
  * @return string
  */
-function xml_encode($data, $root = 'hunzsig', $item = 'item', $attr = '', $id = 'id', $encoding = 'utf-8')
+function xml_encode($data, $root = 'root', $item = 'item', $attr = '', $id = 'id', $encoding = 'utf-8')
 {
     if (is_array($attr)) {
         $_attr = array();
