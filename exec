@@ -1,0 +1,8 @@
+<?php
+/**
+ * 命令台调用
+ */
+
+use PhpureCore\Exec;
+
+Exec::run();
