@@ -8,8 +8,7 @@
  */
 require __DIR__ . '/vendor/autoload.php';
 
-
-PhpureCore\Core::bootstarp(
+PhpureCore\Core::bootstrap(
     realpath(__DIR__),
     'example',
     PhpureCore\Mapping\BootType::AJAX_HTTP

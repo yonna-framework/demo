@@ -1,5 +1,7 @@
 <?php
 
+namespace app\config;
+
 use PhpureCore\Config\Scope;
 use PhpureCore\IO\Request;
 
