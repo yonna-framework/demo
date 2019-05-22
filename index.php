@@ -8,11 +8,14 @@
  */
 require __DIR__ . '/vendor/autoload.php';
 
+ // use PhpureCore\Elasticsearch;
+ // $a = (new Elasticsearch);
+ // exit();
+
 PhpureCore\Core::bootstrap(
-    realpath(__DIR__),
+    realpath(__DIR__ ),
     'example',
     PhpureCore\Mapping\BootType::AJAX_HTTP
 );
-
 
 var_dump('index.php: end');

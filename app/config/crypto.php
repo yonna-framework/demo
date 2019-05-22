@@ -1,6 +1,6 @@
 <?php
 
-use PhpureCore\Glue\Crypto;
+use PhpureCore\Config\Crypto;
 
 Crypto::set('io_token', getenv('CRYPTO_IO_TOKEN'));
 Crypto::set('io_token_secret', getenv('CRYPTO_IO_TOKEN_SECRET'));
