@@ -12,7 +12,7 @@ class PinYin extends AbstractHelper {
 
     private function py(){
         if($this->py===null){
-            $this->py = include_once ("PinYinArray.php");
+            $this->py = include_once("PinYinArray.php");
         }
         return $this->py;
     }
