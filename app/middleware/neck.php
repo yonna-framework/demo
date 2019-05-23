@@ -4,9 +4,9 @@ namespace app\middleware;
 
 class neck extends abstractMiddleware
 {
-    public function test()
+    public function handle()
     {
-        var_dump('before.demo');
+        print_r($this->request());
     }
 
 }

@@ -14,5 +14,5 @@ Scope::delete('restful', \app\scope\data\express::class, 'delete');
 
 Scope
     ::get('test', \app\scope\data\express::class, 'getList')
-    ->middleware(\app\middleware\neck::class, 'test')
-    ->middleware(\app\middleware\tail::class, 'test', true);
+    ->middleware(\app\middleware\neck::class)
+    ->middleware(\app\middleware\tail::class, true);

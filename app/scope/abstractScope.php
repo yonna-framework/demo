@@ -2,9 +2,9 @@
 
 namespace app\scope;
 
-use PhpureCore\Scope\Kernel;
+use PhpureCore\Scope\Scope;
 
-abstract class abstractScope extends Kernel
+abstract class abstractScope extends Scope
 {
 
 

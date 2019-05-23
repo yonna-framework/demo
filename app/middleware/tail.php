@@ -4,9 +4,8 @@ namespace app\middleware;
 
 class tail extends abstractMiddleware
 {
-    public function test()
+    public function handle()
     {
-        var_dump('after.demo');
     }
 
 }

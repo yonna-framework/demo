@@ -2,9 +2,9 @@
 
 namespace app\middleware;
 
-use PhpureCore\Scope\Kernel;
+use PhpureCore\Scope\Middleware;
 
-abstract class abstractMiddleware extends Kernel
+abstract class abstractMiddleware extends Middleware
 {
 
 
