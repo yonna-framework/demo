@@ -25,13 +25,8 @@ class express extends abstractScope
      */
     public function getList()
     {
-        return array(
-            'test' => 1,
-            'test2' => 1,
-            'test3' => 1,
-            'test4' => 1,
-            'test5' => 1,
-        );
+
+        $result = $this->db()->connect()->table('test')->multi();
 
         exit();
         $bean = $this->getBean();
