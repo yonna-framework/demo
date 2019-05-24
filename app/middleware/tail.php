@@ -2,10 +2,13 @@
 
 namespace app\middleware;
 
-class tail extends abstractMiddleware
+use PhpureCore\Scope\Middleware;
+
+class tail extends Middleware
 {
-    public function handle()
+    public function handle($params)
     {
+        // echo('tail');
     }
 
 }

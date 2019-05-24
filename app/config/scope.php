@@ -13,6 +13,6 @@ Scope::patch('restful', \app\scope\data\express::class, 'patch');
 Scope::delete('restful', \app\scope\data\express::class, 'delete');
 
 Scope
-    ::get('test', \app\scope\data\express::class, 'getList')
-    ->middleware(\app\middleware\neck::class)
-    ->middleware(\app\middleware\tail::class, true);
+    ::middleware(\app\middleware\neck::class)
+    ->middleware(\app\middleware\tail::class, true)
+    ->get('test', \app\scope\data\express::class, 'getList');

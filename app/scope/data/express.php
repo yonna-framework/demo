@@ -32,6 +32,7 @@ class express extends abstractScope
             'test4' => 1,
             'test5' => 1,
         );
+
         exit();
         $bean = $this->getBean();
         $model = $this->db()->table('data_express');

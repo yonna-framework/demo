@@ -2,11 +2,14 @@
 
 namespace app\middleware;
 
-class neck extends abstractMiddleware
+use PhpureCore\Scope\Middleware;
+
+class neck extends Middleware
 {
-    public function handle()
+
+    public function handle($params)
     {
-        print_r($this->request());
+        // echo('neck');
     }
 
 }
