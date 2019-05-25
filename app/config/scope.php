@@ -11,6 +11,7 @@ Scope::post('restful', \app\scope\data\express::class, 'post');
 Scope::put('restful', \app\scope\data\express::class, 'put');
 Scope::patch('restful', \app\scope\data\express::class, 'patch');
 Scope::delete('restful', \app\scope\data\express::class, 'delete');
+Scope::delete('restful', \app\scope\data\express::class, 'delete');
 
 Scope
     ::middleware(\app\middleware\neck::class)
