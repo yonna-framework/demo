@@ -10,5 +10,11 @@ Database::mysql(
     getenv('DB_MY_1_ACCOUNT'),
     getenv('DB_MY_1_PASSWORD'),
     getenv('DB_MY_1_NAME'),
-    getenv('DB_MY_1_CHARSET'),
-    );
+    getenv('DB_MY_1_CHARSET')
+);
+
+Database::redis(
+    'redis',
+    getenv('DB_REDIS_1_HOST'),
+    getenv('DB_REDIS_1_PORT')
+);

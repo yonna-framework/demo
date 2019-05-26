@@ -8,6 +8,11 @@ Crypto::set('io_request_protocol', getenv('CRYPTO_IO_REQUEST_PROTOCOL'));
 Crypto::set('io_request_type', getenv('CRYPTO_IO_REQUEST_TYPE'));
 Crypto::set('io_request_secret', getenv('CRYPTO_IO_REQUEST_SECRET'));
 Crypto::set('io_request_iv', getenv('CRYPTO_IO_REQUEST_IV'));
+
 Crypto::set('package_type', getenv('CRYPTO_PACKAGE_TYPE'));
 Crypto::set('package_secret', getenv('CRYPTO_PACKAGE_SECRET'));
 Crypto::set('package_iv', getenv('CRYPTO_PACKAGE_IV'));
+
+Crypto::set('db_type', getenv('CRYPTO_DB_TYPE'));
+Crypto::set('db_secret', getenv('CRYPTO_DB_SECRET'));
+Crypto::set('db_iv', getenv('CRYPTO_DB_IV'));

@@ -3,6 +3,7 @@
 namespace app\scope\data;
 
 use app\scope\abstractScope;
+use PhpureCore\Glue\DB;
 
 class express extends abstractScope
 {
@@ -26,8 +27,10 @@ class express extends abstractScope
     public function getList()
     {
 
-        $result = $this->db()->connect()->table('test')->multi();
+        DB::connect('redis')->set('a', 1, 30);
 
+        $result = DB::connect()->table('test')->multi();
+        print_r($result);
         exit();
         $bean = $this->getBean();
         $model = $this->db()->table('data_express');
