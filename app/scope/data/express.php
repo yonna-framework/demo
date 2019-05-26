@@ -27,11 +27,12 @@ class express extends abstractScope
     public function getList()
     {
 
-        DB::connect('redis')->set('a', 1, 30);
+        //DB::redis()->set('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234', 0, 10);
+        DB::redis()->incr('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
+        $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
 
-        $result = DB::connect()->table('test')->multi();
-        print_r($result);
-        exit();
+        exit($r);
+
         $bean = $this->getBean();
         $model = $this->db()->table('data_express');
         $model = $this->bindWhere($model);
