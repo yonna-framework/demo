@@ -4,6 +4,7 @@ namespace app\scope\data;
 
 use app\scope\abstractScope;
 use PhpureCore\Glue\DB;
+use PhpureCore\Glue\Response;
 
 class express extends abstractScope
 {
