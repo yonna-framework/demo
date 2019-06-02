@@ -29,10 +29,12 @@ class express extends abstractScope
     {
 
         //DB::redis()->set('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234', 0, 10);
-        DB::redis()->incr('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
-        $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
+        // DB::redis()->incr('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
+        // $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
 
-        exit($r);
+        $b = DB::connect()->fetchSql()->table('user')->equalTo('status',5)->multi();
+
+        exit($b);
 
         $bean = $this->getBean();
         $model = $this->db()->table('data_express');
