@@ -7,9 +7,9 @@ use PhpureCore\Event\Listener;
 class demo extends Listener
 {
 
-    public function handle($params)
+    public function handle()
     {
-        var_dump('I am the listen 1');
+        var_dump('I am the listen demo,very simple');
     }
 
 }

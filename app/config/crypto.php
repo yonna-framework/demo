@@ -12,7 +12,3 @@ Crypto::set('io_request_iv', Crypto::env('CRYPTO_IO_REQUEST_IV'));
 Crypto::set('package_type', Crypto::env('CRYPTO_PACKAGE_TYPE'));
 Crypto::set('package_secret', Crypto::env('CRYPTO_PACKAGE_SECRET'));
 Crypto::set('package_iv', Crypto::env('CRYPTO_PACKAGE_IV'));
-
-Crypto::set('db_type', Crypto::env('CRYPTO_DB_TYPE'));
-Crypto::set('db_secret', Crypto::env('CRYPTO_DB_SECRET'));
-Crypto::set('db_iv', Crypto::env('CRYPTO_DB_IV'));
