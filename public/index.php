@@ -16,4 +16,15 @@ PhpureCore\Core::bootstrap(
     PhpureCore\Mapping\BootType::AJAX_HTTP
 );
 
-var_dump('index.php: end');
+/*
+$ctx = \Str::randomLetter(random_int(100,100000));
+$name = md5($ctx);
+$a = \Convert::limitConvert($name, 16);
+$a = str_pad($a, 25, '0');
+$a = str_split($a, 5);
+$a = __DIR__ . '/f/' . implode(DIRECTORY_SEPARATOR, $a) . DIRECTORY_SEPARATOR;
+\System::dirCheck($a,true);
+file_put_contents("{$a}{$name}", $ctx);
+var_dump($a);
+exit();
+ */
