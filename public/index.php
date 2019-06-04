@@ -7,7 +7,6 @@
  * Install composer and exec composer install in your shell when error throw.
  */
 
-
 require __DIR__ . '/../vendor/autoload.php';
 
 PhpureCore\Core::bootstrap(
