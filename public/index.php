@@ -9,6 +9,8 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use PhpureCore\Glue\Response;
+
 PhpureCore\Core::bootstrap(
     realpath(__DIR__ . '/../'),
     'example',

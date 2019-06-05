@@ -1,8 +1,23 @@
+#!/usr/bin/env php
 <?php
+
 /**
+ * EXEC
  * 命令台调用
+ * ! 请不要把此文件公开在public目录下，使攻击者提权
  */
 
-use PhpureCore\Exec;
+require __DIR__ . '/vendor/autoload.php';
 
-Exec::run();
+use PhpureCore\Console\Exec;
+use PhpureCore\Core;
+
+/**
+ * 加载 composer 模块
+ * 如果报错请安装 composer 并执行 composer install 安装所需要的包库
+ *
+ * Load composer modules
+ * Install composer and exec composer install in your shell when error throw.
+ */
+$exec = Core::singleton(Exec::class);
+$exec::run(__DIR__);
