@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": ">=7.3",
-    "hunzsig-server/phpure-core": "dev-master"
+    "hunzsig-server/phpure-core": "@dev"
   },
   "authors": [
     {
@@ -18,5 +18,8 @@
       "email": "mzyhaohaoren@qq.com",
       "homepage": "https://www.hunzsig.com"
     }
-  ]
+  ],
+  "require-dev": {
+    "swoole/ide-helper": "@dev"
+  }
 }
