@@ -2,22 +2,33 @@
 <?php
 
 /**
- * EXEC
- * 命令台调用
- * ! 请不要把此文件公开在public目录下，使攻击者提权
- */
-
-require __DIR__ . '/vendor/autoload.php';
-
-use PhpureCore\Console\Exec;
-use PhpureCore\Core;
-
-/**
  * 加载 composer 模块
  * 如果报错请安装 composer 并执行 composer install 安装所需要的包库
  *
  * Load composer modules
  * Install composer and exec composer install in your shell when error throw.
+ */
+require __DIR__ . '/vendor/autoload.php';
+
+
+/**
+ * EXEC
+ * 命令台调用
+ * ! 请不要把此文件公开在public目录下，使攻击者提权
+ */
+
+use PhpureCore\Console\Exec;
+use PhpureCore\Core;
+
+/**
+ * @var PhpureCore\Console\Exec $exec
+ * 使用说明：
+ * cmd/shell 命令行执行，使用 -o 可以直接执行一个功能
+ * php exec
+ * php exec -o help
+ * php exec -o swh -p 9999
+ * php exec -o swws -p 9999
+ * php exec -o swt -p 9999
  */
 $exec = Core::singleton(Exec::class);
 $exec::run(__DIR__);
