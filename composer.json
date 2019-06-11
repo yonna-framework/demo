@@ -12,6 +12,9 @@
     "php": ">=7.3",
     "hunzsig-server/phpure-core": "@dev"
   },
+  "require-dev": {
+    "swoole/ide-helper": "@dev"
+  },
   "authors": [
     {
       "name": "hunzsig",
