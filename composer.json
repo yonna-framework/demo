@@ -18,8 +18,5 @@
       "email": "mzyhaohaoren@qq.com",
       "homepage": "https://www.hunzsig.com"
     }
-  ],
-  "require-dev": {
-    "swoole/ide-helper": "@dev"
-  }
+  ]
 }
