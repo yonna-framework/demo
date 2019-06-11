@@ -9,8 +9,13 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-PhpureCore\Core::bootstrap(
+$ResponseCollector = PhpureCore\Core::bootstrap(
     realpath(__DIR__ . '/../'),
     'example',
     PhpureCore\Mapping\BootType::AJAX_HTTP
 );
+
+/**
+ * end response
+ */
+$ResponseCollector->end();

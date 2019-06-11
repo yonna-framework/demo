@@ -32,9 +32,8 @@ class express extends abstractScope
         // DB::redis()->incr('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
         // $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
 
-        $b = DB::connect()->fetchSql()->table('data_feedback')->equalTo('status',5)->multi();
+        $b = DB::connect()->table('user')->equalTo('status',5)->fetchSql()->multi();
         return $b;
-        var_dump($b);
         exit();
 
         $bean = $this->getBean();
