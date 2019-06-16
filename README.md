@@ -7,7 +7,7 @@
 git clone https://github.com/hunzsig/phpure.git
 ```
 
-> 安装依赖包
+> 安装composer依赖包
 ```
 composer install
 ```
