@@ -33,7 +33,7 @@ class express extends abstractScope
         // $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
 
 
-        $b = DB::pgsql()->schemas()->table()->equalTo()
+        $b = DB::pgsql()->schemas()->table()->equalTo();
         return $b;
         exit();
 
