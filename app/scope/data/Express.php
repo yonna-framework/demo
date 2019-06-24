@@ -4,9 +4,8 @@ namespace app\scope\data;
 
 use app\scope\abstractScope;
 use PhpureCore\Glue\DB;
-use PhpureCore\Glue\Response;
 
-class express extends abstractScope
+class Express extends abstractScope
 {
 
     /**
@@ -31,7 +30,6 @@ class express extends abstractScope
         //DB::redis()->set('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234', 0, 10);
         // DB::redis()->incr('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
         // $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
-
 
         $b = DB::pgsql()->schemas()->table()->equalTo();
         return $b;

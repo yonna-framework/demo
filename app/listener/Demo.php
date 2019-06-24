@@ -4,7 +4,7 @@ namespace app\listener;
 
 use PhpureCore\Event\Listener;
 
-class demo extends Listener
+class Demo extends Listener
 {
 
     public function handle()

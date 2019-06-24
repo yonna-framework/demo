@@ -4,12 +4,12 @@ namespace app\middleware;
 
 use PhpureCore\Scope\Middleware;
 
-class neck extends Middleware
+class Before extends Middleware
 {
 
     public function handle($params)
     {
-        // echo('neck');
+        // echo('before');
     }
 
 }

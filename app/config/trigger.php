@@ -2,9 +2,9 @@
 
 use PhpureCore\Config\Trigger;
 
-Trigger::reg(\app\event\demo::class, [
-    \app\listener\demo::class,
-    \app\listener\demo2::class,
+Trigger::reg(\app\event\Demo::class, [
+    \app\listener\Demo::class,
+    \app\listener\Demo2::class,
 ]);
 
 // 触发事件
