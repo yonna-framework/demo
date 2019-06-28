@@ -14,12 +14,6 @@ Scope::post('restful', Express::class, 'post');
 Scope::put('restful', Express::class, 'put');
 Scope::patch('restful', Express::class, 'delete');
 
-Scope::middleware(BeforeDemo::class, function () {
-
-    Scope::get('express', Express::class, 'getList');
-
-});
-
 Scope::middleware(
     [
         BeforeDemo::class,
