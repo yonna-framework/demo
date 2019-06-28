@@ -2,9 +2,9 @@
 
 namespace app\middleware;
 
-use PhpureCore\Scope\Middleware;
+use PhpureCore\Scope\After;
 
-class After extends Middleware
+class AfterDemo extends After
 {
     public function handle($params)
     {

@@ -2,9 +2,9 @@
 
 namespace app\middleware;
 
-use PhpureCore\Scope\Middleware;
+use PhpureCore\Scope\Before;
 
-class Before extends Middleware
+class BeforeDemo extends Before
 {
 
     public function handle($params)
