@@ -1,5 +1,5 @@
 {
-  "name": "yonna",
+  "name": "yonna/demo",
   "type": "project",
   "description": "A php project: yonna",
   "keywords": ["yonna", "php", "framework-demo"],
@@ -18,8 +18,5 @@
   },
   "require-dev": {
     "swoole/ide-helper": "@dev"
-  },
-  "autoload": {
-    "psr-4": { "Yonna\\Demo\\": "" }
   }
 }
