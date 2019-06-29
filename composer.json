@@ -2,15 +2,15 @@
   "name": "yonna",
   "description": "A php project: yonna",
   "license": "MIT",
-  "version": "0.0.1",
   "type": "project",
   "keywords": [
     "php",
-    "framework-demo"s
+    "framework-demo"
   ],
   "require": {
     "php": ">=7.3",
-    "hunzsig-server/phpure-core": "@dev"
+    "yonna/core": "@dev",
+    "yonna/var-dumper": "@dev"
   },
   "require-dev": {
     "swoole/ide-helper": "@dev"
