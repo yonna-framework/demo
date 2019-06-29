@@ -1,12 +1,12 @@
 {
-  "name": "hunzsig/phpure",
-  "description": "A php project: pure",
+  "name": "yonna",
+  "description": "A php project: yonna",
   "license": "MIT",
   "version": "0.0.1",
   "type": "project",
   "keywords": [
     "php",
-    "framework-demo"
+    "framework-demo"s
   ],
   "require": {
     "php": ">=7.3",
