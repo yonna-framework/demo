@@ -1,11 +1,15 @@
 {
   "name": "yonna",
-  "description": "A php project: yonna",
-  "license": "MIT",
   "type": "project",
-  "keywords": [
-    "php",
-    "framework-demo"
+  "description": "A php project: yonna",
+  "keywords": ["yonna", "php", "framework-demo"],
+  "homepage": "https://www.hunzsig.org",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "hunzsig",
+      "email": "mzyhaohaoren@qq.com"
+    }
   ],
   "require": {
     "php": ">=7.3",
@@ -15,11 +19,7 @@
   "require-dev": {
     "swoole/ide-helper": "@dev"
   },
-  "authors": [
-    {
-      "name": "hunzsig",
-      "email": "mzyhaohaoren@qq.com",
-      "homepage": "https://www.hunzsig.com"
-    }
-  ]
+  "autoload": {
+    "psr-4": { "Yonna\\Demo\\": "" }
+  }
 }
