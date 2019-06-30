@@ -20,7 +20,12 @@
     "php": ">=7.3",
     "yonna/core": "@dev",
     "yonna/var-dumper": "@dev",
-    "yonna/database": "@dev"
+    "yonna/database": "@dev",
+    "yonna/mapping": "@dev",
+    "yonna/event": "@dev",
+    "yonna/queue": "@dev",
+    "yonna/log": "@dev",
+    "yonna/sdk": "@dev"
   },
   "require-dev": {
     "swoole/ide-helper": "@dev"
