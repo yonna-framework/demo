@@ -3,7 +3,7 @@
 use app\middleware\AfterDemo;
 use app\middleware\BeforeDemo;
 use app\scope\data\Express;
-use PhpureCore\Glue\Scope;
+use Yonna\Glue\Scope;
 
 Scope::post('login', function ($request) {
     dump($request);

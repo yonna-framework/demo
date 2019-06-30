@@ -3,7 +3,7 @@
 namespace app\scope\data;
 
 use app\scope\abstractScope;
-use PhpureCore\Glue\DB;
+use Yonna\Glue\DB;
 
 class Express extends abstractScope
 {

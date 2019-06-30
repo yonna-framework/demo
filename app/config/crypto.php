@@ -1,6 +1,6 @@
 <?php
 
-use PhpureCore\Config\Crypto;
+use Yonna\Config\Crypto;
 
 Crypto::set('io_token', Crypto::env('CRYPTO_IO_TOKEN'));
 Crypto::set('io_token_secret', Crypto::env('CRYPTO_IO_TOKEN_SECRET'));

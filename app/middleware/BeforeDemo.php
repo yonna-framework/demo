@@ -2,7 +2,7 @@
 
 namespace app\middleware;
 
-use PhpureCore\Scope\Before;
+use Yonna\Scope\Before;
 
 class BeforeDemo extends Before
 {

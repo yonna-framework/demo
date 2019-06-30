@@ -2,7 +2,7 @@
 
 namespace app\middleware;
 
-use PhpureCore\Scope\After;
+use Yonna\Scope\After;
 
 class AfterDemo extends After
 {

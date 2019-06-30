@@ -2,7 +2,7 @@
 
 namespace app\listener;
 
-use PhpureCore\Event\Listener;
+use Yonna\Event\Listener;
 
 class Demo extends Listener
 {

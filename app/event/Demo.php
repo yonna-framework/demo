@@ -2,7 +2,7 @@
 
 namespace app\event;
 
-use PhpureCore\Event\Event;
+use Yonna\Event\Event;
 
 class Demo extends Event
 {

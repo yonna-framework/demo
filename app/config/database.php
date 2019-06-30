@@ -1,6 +1,6 @@
 <?php
 
-use PhpureCore\Config\Database;
+use Yonna\Config\Database;
 
 
 Database::mysql(

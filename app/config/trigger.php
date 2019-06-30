@@ -1,6 +1,6 @@
 <?php
 
-use PhpureCore\Config\Trigger;
+use Yonna\Config\Trigger;
 
 Trigger::reg(\app\event\Demo::class, [
     \app\listener\Demo::class,

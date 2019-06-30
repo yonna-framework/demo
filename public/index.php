@@ -9,10 +9,10 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$ResponseCollector = PhpureCore\Core::bootstrap(
+$ResponseCollector = Yonna\Core::bootstrap(
     realpath(__DIR__ . '/../'),
     'example',
-    PhpureCore\Mapping\BootType::AJAX_HTTP
+    Yonna\Mapping\BootType::AJAX_HTTP
 );
 
 /**

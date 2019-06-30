@@ -2,7 +2,7 @@
 
 namespace app\scope;
 
-use PhpureCore\Scope\Scope;
+use Yonna\Scope\Scope;
 
 abstract class abstractScope extends Scope
 {
