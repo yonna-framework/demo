@@ -1,8 +1,13 @@
 {
-  "name": "yonna/demo",
+  "name": "yonna/yonna",
   "type": "project",
   "description": "A php project: yonna",
-  "keywords": ["yonna", "php", "framework-demo"],
+  "keywords": [
+    "yonna",
+    "php",
+    "framework",
+    "demo"
+  ],
   "homepage": "https://www.hunzsig.org",
   "license": "MIT",
   "authors": [
@@ -14,7 +19,8 @@
   "require": {
     "php": ">=7.3",
     "yonna/core": "@dev",
-    "yonna/var-dumper": "@dev"
+    "yonna/var-dumper": "@dev",
+    "yonna/database": "@dev"
   },
   "require-dev": {
     "swoole/ide-helper": "@dev"
