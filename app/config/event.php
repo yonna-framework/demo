@@ -1,8 +1,8 @@
 <?php
 
-use Yonna\Config\Trigger;
+use Yonna\Event\Config;
 
-Trigger::reg(\app\event\Demo::class, [
+Config::reg(\app\event\Demo::class, [
     \app\listener\Demo::class,
     \app\listener\Demo2::class,
 ]);

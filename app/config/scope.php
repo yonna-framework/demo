@@ -3,25 +3,25 @@
 use app\middleware\AfterDemo;
 use app\middleware\BeforeDemo;
 use app\scope\data\Express;
-use Yonna\Glue\Scope;
+use Yonna\Scope\Config;
 
-Scope::post('login', function ($request) {
+Config::post('login', function ($request) {
     dump($request);
 });
 
-Scope::get('restful', Express::class, 'get');
-Scope::post('restful', Express::class, 'post');
-Scope::put('restful', Express::class, 'put');
-Scope::patch('restful', Express::class, 'delete');
+Config::get('restful', Express::class, 'get');
+Config::post('restful', Express::class, 'post');
+Config::put('restful', Express::class, 'put');
+Config::patch('restful', Express::class, 'delete');
 
-Scope::middleware(
+Config::middleware(
     [
         BeforeDemo::class,
         AfterDemo::class,
     ],
     function () {
 
-        Scope::get('express', Express::class, 'getList');
+        Config::get('express', Express::class, 'getList');
 
     }
 );

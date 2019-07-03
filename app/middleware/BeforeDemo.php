@@ -2,7 +2,7 @@
 
 namespace app\middleware;
 
-use Yonna\Scope\Before;
+use Yonna\Middleware\Before;
 
 class BeforeDemo extends Before
 {

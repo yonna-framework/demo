@@ -24,8 +24,11 @@
     "yonna/mapping": "@dev",
     "yonna/event": "@dev",
     "yonna/queue": "@dev",
+    "yonna/sdk": "@dev",
     "yonna/log": "@dev",
-    "yonna/sdk": "@dev"
+    "yonna/response": "@dev",
+    "yonna/exception": "@dev",
+    "yonna/foundation": "@dev"
   },
   "require-dev": {
     "swoole/ide-helper": "@dev"

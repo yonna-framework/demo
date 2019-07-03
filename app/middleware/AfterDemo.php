@@ -2,7 +2,7 @@
 
 namespace app\middleware;
 
-use Yonna\Scope\After;
+use Yonna\Middleware\After;
 
 class AfterDemo extends After
 {
