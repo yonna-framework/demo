@@ -3,7 +3,7 @@
 namespace app\scope\data;
 
 use app\scope\abstractScope;
-use Yonna\Glue\DB;
+use Yonna\Database\DB;
 
 class Express extends abstractScope
 {
@@ -31,7 +31,14 @@ class Express extends abstractScope
         // DB::redis()->incr('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
         // $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
 
-        $b = DB::pgsql()->schemas()->table()->equalTo();
+        $b = DB::connect()->table('test')->insertAll([
+            ['data' => time()],
+            ['data' => time()],
+            ['data' => time()],
+            ['data' => time()],
+            ['data' => time()],
+            ['data' => time()],
+        ]);
         return $b;
         exit();
 
