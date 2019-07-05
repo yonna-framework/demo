@@ -4,6 +4,7 @@ namespace app\scope\data;
 
 use app\scope\abstractScope;
 use Yonna\Database\DB;
+use Yonna\Exception\Exception;
 
 class Express extends abstractScope
 {
@@ -31,14 +32,9 @@ class Express extends abstractScope
         // DB::redis()->incr('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
         // $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
 
-        $b = DB::connect()->table('test')->insertAll([
-            ['data' => time()],
-            ['data' => time()],
-            ['data' => time()],
-            ['data' => time()],
-            ['data' => time()],
-            ['data' => time()],
-        ]);
+        return '这是阿强返回的一个字符串';
+
+        $b = DB::connect()->table('test')->page(0, 5);
         return $b;
         exit();
 
