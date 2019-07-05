@@ -7,9 +7,9 @@ use Yonna\Middleware\Before;
 class BeforeDemo extends Before
 {
 
-    public function handle($params)
+    public function handle()
     {
-        // echo('before');
+        echo('before');
     }
 
 }
