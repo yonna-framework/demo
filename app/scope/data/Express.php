@@ -32,6 +32,7 @@ class Express extends abstractScope
         // DB::redis()->incr('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
         // $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
 
+        throw new \Exception('3123');
         return '这是阿强返回的一个字符串';
 
         $b = DB::connect()->table('test')->page(0, 5);
