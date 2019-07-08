@@ -17,11 +17,11 @@ require __DIR__ . '/vendor/autoload.php';
  * ! 请不要把此文件公开在public目录下，使攻击者提权
  */
 
-use PhpureCore\Console\Exec;
-use PhpureCore\Core;
+use Yonna\Console\Exec;
+use Yonna\Core;
 
 /**
- * @var PhpureCore\Console\Exec $exec
+ * @var Yonna\Console\Exec $exec
  * 使用说明：
  * cmd/shell 命令行执行，使用 -o 可以直接执行一个功能
  * php exec

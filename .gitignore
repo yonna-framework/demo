@@ -3,5 +3,6 @@ log/
 applog/
 vendor/
 composer.lock
+public/index.php
 .env*
 !.env.example

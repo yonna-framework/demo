@@ -32,5 +32,10 @@
   },
   "require-dev": {
     "swoole/ide-helper": "@dev"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('public/index.php') || copy('public/index.example.php', 'public/index.php');\""
+    ]
   }
 }
