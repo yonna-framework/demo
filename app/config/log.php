@@ -2,6 +2,6 @@
 
 use Yonna\Log\Config;
 
-Config::setFile('app_log');
+Config::setFile('applog');
 
-Config::setFileExpireDay(1);
+Config::setFileExpireDay(30); // 30 days
