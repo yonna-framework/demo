@@ -27,7 +27,7 @@
     "yonna/sdk": "@dev",
     "yonna/log": "@dev",
     "yonna/response": "@dev",
-    "yonna/exception": "@dev",
+    "yonna/throwable": "@dev",
     "yonna/foundation": "@dev"
   },
   "require-dev": {
