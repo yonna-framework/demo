@@ -4,7 +4,7 @@ namespace app\scope\data;
 
 use app\scope\abstractScope;
 use Yonna\Database\DB;
-use Yonna\Exception\Exception;
+use Yonna\Throwable\Exception;
 
 class Express extends abstractScope
 {
