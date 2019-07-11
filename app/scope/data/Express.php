@@ -4,6 +4,7 @@ namespace app\scope\data;
 
 use app\scope\abstractScope;
 use Yonna\Database\DB;
+use Yonna\Log\MongoLog;
 use Yonna\Throwable\Exception;
 
 class Express extends abstractScope
@@ -32,7 +33,8 @@ class Express extends abstractScope
         // DB::redis()->incr('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
         // $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
 
-        throw new \Exception('3123');
+        (new MongoLog)->warning('mongo error');
+
         return '这是阿强返回的一个字符串';
 
         $b = DB::connect()->table('test')->page(0, 5);
