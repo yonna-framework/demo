@@ -33,7 +33,15 @@ class Express extends abstractScope
         // DB::redis()->incr('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
         // $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
 
-        (new MongoLog)->warning('mongo error');
+        DB::enableRecord();
+        DB::connect()->table('test')->multi();
+        DB::mongo()->collection('test')->insert(['a' => 1]);
+        DB::mongo()->collection('test')->insertAll([
+            ['a' => 1],
+            ['a' => 2, 'b' => 3],
+            ['a' => 3, 'c' => 4]
+        ]);
+        print_r(DB::getRecord());
 
         return '这是阿强返回的一个字符串';
 

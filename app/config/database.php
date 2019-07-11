@@ -19,6 +19,14 @@ Config::mysql(
     ]
 );
 
+Config::mongo(
+    'mongo', [
+        'host' => Config::env('DB_MONGO_1_HOST'),
+        'port' => Config::env('DB_MONGO_1_PORT'),
+        'name' => Config::env('DB_MONGO_1_NAME'),
+    ]
+);
+
 Config::redis(
     'redis', [
         'host' => Config::env('DB_REDIS_1_HOST'),
