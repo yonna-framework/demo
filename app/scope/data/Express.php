@@ -4,6 +4,7 @@ namespace app\scope\data;
 
 use app\scope\abstractScope;
 use Yonna\Database\DB;
+use Yonna\Foundation\Str;
 use Yonna\Log\MongoLog;
 use Yonna\Throwable\Exception;
 
@@ -29,11 +30,14 @@ class Express extends abstractScope
     public function getList()
     {
 
-        //DB::redis()->set('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234', 0, 10);
-        // DB::redis()->incr('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
-        // $r = DB::redis()->get('a434234234a434234234a434234234a434234234a434234234a434234234a434234234a434234234');
-
         DB::enableRecord();
+
+        $value = Str::random(1000);
+        DB::redis()->set('abcd', $value, 100);
+        $r = DB::redis()->get('abcd');
+
+
+        /*
         DB::connect()->table('test')->multi();
         DB::mongo()->collection('test')->insert(['a' => 1]);
         DB::mongo()->collection('test')->insertAll([
@@ -41,8 +45,10 @@ class Express extends abstractScope
             ['a' => 2, 'b' => 3],
             ['a' => 3, 'c' => 4]
         ]);
-        print_r(DB::getRecord());
+        */
 
+        print_r(DB::getRecord());
+        /*
         return '这是阿强返回的一个字符串';
 
         $b = DB::connect()->table('test')->page(0, 5);
@@ -64,6 +70,7 @@ class Express extends abstractScope
             $result = $model->multi();
         }
         return $this->success($result);
+        */
     }
 
     /**
