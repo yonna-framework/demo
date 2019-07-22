@@ -4,6 +4,7 @@ namespace app\scope\data;
 
 use app\scope\abstractScope;
 use Yonna\Database\DB;
+use Yonna\Database\Driver\Type;
 use Yonna\Foundation\Str;
 use Yonna\Log\MongoLog;
 use Yonna\Throwable\Exception;
@@ -30,24 +31,24 @@ class Express extends abstractScope
     public function getList()
     {
 
-        DB::enableRecord();
+        DB::enableRecord([Type::MYSQL, Type::MONGO]);
 
         $value = Str::random(1000);
         DB::redis()->set('abcd', $value, 100);
         $r = DB::redis()->get('abcd');
 
+        $b = DB::connect()->table('test')->page(0, 5);
 
-        /*
         DB::connect()->table('test')->multi();
+
         DB::mongo()->collection('test')->insert(['a' => 1]);
         DB::mongo()->collection('test')->insertAll([
             ['a' => 1],
             ['a' => 2, 'b' => 3],
             ['a' => 3, 'c' => 4]
         ]);
-        */
 
-        print_r(DB::getRecord());
+        dd(DB::getRecord());
         /*
         return '这是阿强返回的一个字符串';
 
