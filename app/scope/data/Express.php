@@ -31,11 +31,18 @@ class Express extends abstractScope
     public function getList()
     {
 
-        DB::enableRecord([Type::MYSQL, Type::MONGO]);
+        DB::enableRecord();
 
-        $value = Str::random(1000);
-        DB::redis()->set('abcd', $value, 100);
-        $r = DB::redis()->get('abcd');
+        DB::redis()->set('a', Str::randomNum(50), 100);
+        DB::redis()->set('b', Str::randomNum(50), 100);
+        DB::redis()->set('c', Str::randomNum(50), 100);
+        DB::redis()->set('d', Str::randomNum(50), 100);
+        DB::redis()->mSet([
+            'e' => Str::randomNum(50),
+            'f' => Str::randomNum(50),
+        ],1);
+        $r = DB::redis()->get(['a', 'b', 'c', 'd', 'e', 'f']);
+        dd($r);
 
         $b = DB::connect()->table('test')->page(0, 5);
 
