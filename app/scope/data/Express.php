@@ -31,7 +31,7 @@ class Express extends abstractScope
     public function getList()
     {
 
-        DB::enableRecord();
+        DB::enableRecord([Type::REDIS]);
 
         DB::redis()->set('a', Str::randomNum(50), 100);
         DB::redis()->set('b', Str::randomNum(50), 100);
@@ -40,9 +40,20 @@ class Express extends abstractScope
         DB::redis()->mSet([
             'e' => Str::randomNum(50),
             'f' => Str::randomNum(50),
-        ],1);
+        ], 1);
         $r = DB::redis()->get(['a', 'b', 'c', 'd', 'e', 'f']);
-        dd($r);
+        // 这里切成了索引2的数据库，后续也会一直用
+        DB::redis()->select(2);
+        $inc = DB::redis()->incr('x', 1);
+        $inc = DB::redis()->incr('x', 1);
+        // 这里临时切成了索引3的数据库，用完会自动切回2数据库
+        DB::redis()->select(3, function () {
+            $inc = DB::redis()->incr('x', 7);
+        });
+        // 所以这句incr是干的索引2数据库了
+        $inc = DB::redis()->incr('x', 1);
+        var_dump($inc);
+        exit();
 
         $b = DB::connect()->table('test')->page(0, 5);
 
