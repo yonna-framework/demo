@@ -52,7 +52,7 @@ class Express extends abstractScope
         });
         // 所以这句incr是干的索引2数据库了
         $inc = DB::redis()->incr('x', 1);
-        dd(DB::getRecord()); 
+        dd(DB::getRecord());
         exit();
 
         $b = DB::connect()->table('test')->page(0, 5);
