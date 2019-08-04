@@ -66,7 +66,7 @@ class Express extends abstractScope
             ['a' => 3, 'c' => 4]
         ]);
 
-        dd(DB::getRecord());
+        //dd(DB::getRecord());
         /*
         return '这是阿强返回的一个字符串';
 
