@@ -31,13 +31,16 @@ class Express extends abstractScope
     public function getList()
     {
 
-        DB::enableRecord([Type::REDIS]);
+        $db = DB::new();
 
-        DB::redis()->set('a', Str::randomNum(50), 100);
-        DB::redis()->set('b', Str::randomNum(50), 100);
-        DB::redis()->set('c', Str::randomNum(50), 100);
-        DB::redis()->set('d', Str::randomNum(50), 100);
-        DB::redis()->mSet([
+        $db->enableRecord([Type::REDIS]);
+
+        $db->redis()->set('a', Str::randomNum(50), 100);
+        $db->redis()->set('b', Str::randomNum(50), 100);
+        $db->redis()->set('c', Str::randomNum(50), 100);
+        $db->redis()->set('d', Str::randomNum(50), 100);
+
+        $db->redis()->mSet([
             'e' => Str::randomNum(50),
             'f' => Str::randomNum(50),
         ], 1);
@@ -52,7 +55,7 @@ class Express extends abstractScope
         });
         // 所以这句incr是干的索引2数据库了
         $inc = DB::redis()->incr('x', 1);
-        dd(DB::getRecord());
+        dd($record->fetchRecords());
         exit();
 
         $b = DB::connect()->table('test')->page(0, 5);
