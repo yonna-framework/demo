@@ -33,7 +33,7 @@ class Express extends abstractScope
 
         $db = DB::new();
 
-        $db->enableRecord([Type::REDIS]);
+        $db->startRecord();
 
         $db->redis()->set('a', Str::randomNum(50), 100);
         $db->redis()->set('b', Str::randomNum(50), 100);
@@ -43,33 +43,33 @@ class Express extends abstractScope
         $db->redis()->mSet([
             'e' => Str::randomNum(50),
             'f' => Str::randomNum(50),
-        ], 1);
-        $r = DB::redis()->get(['a', 'b', 'c', 'd', 'e', 'f']);
+        ], 100);
+        $r = $db->redis()->get(['a', 'b', 'c', 'd', 'e', 'f']);
         // 这里切成了索引2的数据库，后续也会一直用
-        DB::redis()->select(2);
-        $inc = DB::redis()->incr('x', 1);
-        $inc = DB::redis()->incr('x', 1);
+        $db->redis()->select(2);
+        $db->redis()->set('mzy', time());
+        $inc = $db->redis()->incr('x', 1);
+        $inc = $db->redis()->incr('x', 1);
         // 这里临时切成了索引3的数据库，用完会自动切回2数据库
-        DB::redis()->select(3, function () {
-            $inc = DB::redis()->incr('x', 7);
+        $db->redis()->select(3, function () use ($db) {
+            $db->redis()->set('mzy', time());
+            $inc = $db->redis()->incr('x', 7);
         });
         // 所以这句incr是干的索引2数据库了
-        $inc = DB::redis()->incr('x', 1);
-        dd($record->fetchRecords());
+        $inc = $db->redis()->incr('x', 1);
         exit();
 
-        $b = DB::connect()->table('test')->page(0, 5);
+        $b = $db->connect()->table('test')->page(0, 5);
 
-        DB::connect()->table('test')->multi();
+        $db->connect()->table('test')->multi();
 
-        DB::mongo()->collection('test')->insert(['a' => 1]);
-        DB::mongo()->collection('test')->insertAll([
+        $db->mongo()->collection('test')->insert(['a' => 1]);
+        $db->mongo()->collection('test')->insertAll([
             ['a' => 1],
             ['a' => 2, 'b' => 3],
             ['a' => 3, 'c' => 4]
         ]);
 
-        //dd(DB::getRecord());
         /*
         return '这是阿强返回的一个字符串';
 
