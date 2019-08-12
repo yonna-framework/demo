@@ -57,7 +57,6 @@ class Express extends abstractScope
         });
         // 所以这句incr是干的索引2数据库了
         $inc = $db->redis()->incr('x', 1);
-
         exit();
 
         $b = $db->connect()->table('test')->page(0, 5);
