@@ -5,6 +5,7 @@ namespace app\scope\data;
 use app\scope\abstractScope;
 use Yonna\Database\DB;
 use Yonna\Database\Driver\Type;
+use Yonna\Database\Support\Record;
 use Yonna\Foundation\Str;
 use Yonna\Log\MongoLog;
 use Yonna\Throwable\Exception;
@@ -31,40 +32,40 @@ class Express extends abstractScope
     public function getList()
     {
 
-        $db = DB::new();
+        DB::startRecord();
 
-        $db->startRecord();
+        DB::redis()->set('a', Str::randomNum(50), 100);
+        DB::redis()->set('b', Str::randomNum(50), 100);
+        DB::redis()->set('c', Str::randomNum(50), 100);
+        DB::redis()->set('d', Str::randomNum(50), 100);
 
-        $db->redis()->set('a', Str::randomNum(50), 100);
-        $db->redis()->set('b', Str::randomNum(50), 100);
-        $db->redis()->set('c', Str::randomNum(50), 100);
-        $db->redis()->set('d', Str::randomNum(50), 100);
-
-        $db->redis()->mSet([
+        DB::redis()->mSet([
             'e' => Str::randomNum(50),
             'f' => Str::randomNum(50),
         ], 100);
-        $r = $db->redis()->get(['a', 'b', 'c', 'd', 'e', 'f']);
+        $r = DB::redis()->get(['a', 'b', 'c', 'd', 'e', 'f']);
         // 这里切成了索引2的数据库，后续也会一直用
-        $db->redis()->select(2);
-        $db->redis()->set('mzy', time());
-        $inc = $db->redis()->incr('x', 1);
-        $inc = $db->redis()->incr('x', 1);
+        DB::redis()->select(2);
+        DB::redis()->set('mzy', time());
+        $inc = DB::redis()->incr('x', 1);
+        $inc = DB::redis()->incr('x', 1);
         // 这里临时切成了索引3的数据库，用完会自动切回2数据库
-        $db->redis()->select(3, function () use ($db) {
-            $db->redis()->set('mzy', time());
-            $inc = $db->redis()->incr('x', 7);
+        DB::redis()->select(3, function () {
+            DB::redis()->set('mzy', time());
+            $inc = DB::redis()->incr('x', 7);
         });
         // 所以这句incr是干的索引2数据库了
-        $inc = $db->redis()->incr('x', 1);
+        $inc = DB::redis()->incr('x', 1);
+
+        print_r(Record::fetch(Type::REDIS));
         exit();
 
-        $b = $db->connect()->table('test')->page(0, 5);
+        $b = DB::connect()->table('test')->page(0, 5);
 
-        $db->connect()->table('test')->multi();
+        DB::connect()->table('test')->multi();
 
-        $db->mongo()->collection('test')->insert(['a' => 1]);
-        $db->mongo()->collection('test')->insertAll([
+        DB::mongo()->collection('test')->insert(['a' => 1]);
+        DB::mongo()->collection('test')->insertAll([
             ['a' => 1],
             ['a' => 2, 'b' => 3],
             ['a' => 3, 'c' => 4]
