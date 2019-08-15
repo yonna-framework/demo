@@ -3,6 +3,8 @@
 namespace app\scope\data;
 
 use app\scope\abstractScope;
+use library\Mysql;
+use Throwable;
 use Yonna\Database\DB;
 use Yonna\Database\Driver\Type;
 use Yonna\Database\Support\Record;
@@ -14,8 +16,8 @@ class Express extends abstractScope
 {
 
     /**
-     * @param \library\Mysql $model
-     * @return \library\Mysql
+     * @param Mysql $model
+     * @return Mysql
      */
     private function bindWhere($model)
     {
@@ -27,12 +29,21 @@ class Express extends abstractScope
 
     /**
      * 获取列表
-     * @return array
+     * @return void
+     * @throws Exception\DatabaseException
      */
     public function getList()
     {
 
         DB::startRecord();
+
+        DB::redis()->set('a', 'aaaaa');
+        DB::transTrace(function () {
+            DB::redis()->set('a', time());
+            Exception::debug('debug');
+        });
+
+        exit('xxx');
 
         DB::redis()->set('a', Str::randomNum(50), 100);
         DB::redis()->set('b', Str::randomNum(50), 100);
