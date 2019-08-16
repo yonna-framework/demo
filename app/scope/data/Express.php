@@ -35,12 +35,14 @@ class Express extends abstractScope
     public function getList()
     {
 
-        DB::startRecord();
+        // DB::startRecord();
 
-        DB::redis()->set('a', 'aaaaa');
+        DB::mongo()->collection('test')->insertAll([
+            ['fixed' => 1],
+        ]);
         DB::transTrace(function () {
-            DB::redis()->set('a', time());
-            Exception::debug('debug');
+            DB::mongo()->collection('test')->insert(['mzy' => 7777]);
+            Exception::debug('TESTING');
         });
 
         exit('xxx');
@@ -72,8 +74,6 @@ class Express extends abstractScope
         exit();
 
         $b = DB::connect()->table('test')->page(0, 5);
-
-        DB::connect()->table('test')->multi();
 
         DB::mongo()->collection('test')->insert(['a' => 1]);
         DB::mongo()->collection('test')->insertAll([
