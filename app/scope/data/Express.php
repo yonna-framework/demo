@@ -45,8 +45,6 @@ class Express extends abstractScope
             Exception::debug('TESTING');
         });
 
-        exit('xxx');
-
         DB::redis()->set('a', Str::randomNum(50), 100);
         DB::redis()->set('b', Str::randomNum(50), 100);
         DB::redis()->set('c', Str::randomNum(50), 100);
