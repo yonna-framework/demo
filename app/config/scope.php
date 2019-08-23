@@ -21,6 +21,7 @@ Config::middleware(
     ],
     function () {
 
+        Config::post('express', Express::class, 'getList');
         Config::get('express', Express::class, 'getList');
 
     }
