@@ -35,6 +35,8 @@ class Express extends abstractScope
     public function getList()
     {
 
+        return 'abcdefg';
+
         DB::startRecord();
 
         DB::transTrace(function () {
