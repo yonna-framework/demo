@@ -26,3 +26,5 @@ Config::middleware(
 
     }
 );
+
+Config::stream('express', Express::class, 'getList');
