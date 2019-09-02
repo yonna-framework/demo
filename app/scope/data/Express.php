@@ -6,6 +6,7 @@ use app\scope\abstractScope;
 use library\Mysql;
 use Throwable;
 use Yonna\Database\DB;
+use Yonna\Database\Driver\Cache;
 use Yonna\Database\Driver\Type;
 use Yonna\Database\Support\Record;
 use Yonna\Foundation\Str;
@@ -35,16 +36,16 @@ class Express extends abstractScope
     public function getList()
     {
 
-        return 'abcdefg';
-
         DB::startRecord();
 
+
         DB::transTrace(function () {
-            DB::mongo()->collection('test')->insert(['mzy' => 7777]);
-            Exception::debug('TESTING');
+            DB::connect()->table('test')->insert(['data' => '123']);
         });
 
-        exit('666');
+        print_r(DB::fetchRecord());
+
+        return 'ok';
 
         DB::redis()->set('a', Str::randomNum(50), 100);
         DB::redis()->set('b', Str::randomNum(50), 100);
