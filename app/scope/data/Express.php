@@ -45,7 +45,7 @@ class Express extends abstractScope
 
         print_r(DB::fetchRecord());
 
-        return 'ok';
+        return 'ok!';
 
         DB::redis()->set('a', Str::randomNum(50), 100);
         DB::redis()->set('b', Str::randomNum(50), 100);
