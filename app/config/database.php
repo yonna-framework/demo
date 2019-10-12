@@ -24,6 +24,8 @@ Config::mongo(
         'host' => Config::env('DB_MONGO_1_HOST'),
         'port' => Config::env('DB_MONGO_1_PORT'),
         'name' => Config::env('DB_MONGO_1_NAME'),
+        'account' => Config::env('DB_MONGO_1_ACCOUNT'),
+        'password' => Config::env('DB_MONGO_1_PASSWORD'),
     ]
 );
 
