@@ -15,7 +15,7 @@ class Mongo extends abstractScope
     public function index()
     {
         $res = DB::mongo()->collection('test')
-            ->equalTo('index', 10)
+            ->greaterThan('age', 10)
             ->multi();
         return $res;
     }
