@@ -8,7 +8,7 @@
     ws = new WebSocket("ws://127.0.0.1:9999");
     ws.onopen = function() {
         console.log("连接成功");
-        ws.send('{"scope":"express"}');
+        ws.send('{"scope":"test"}');
     };
     ws.onmessage = function(e) {
         console.log("收到服务端的消息：" + e.data);
