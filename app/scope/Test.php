@@ -11,6 +11,7 @@ class Test extends abstractScope
      * @return array
      */
     public function index(){
+        print_r($this->request()->getSwoole());
         return ['hello world'];
     }
 
