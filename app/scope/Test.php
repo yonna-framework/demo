@@ -11,7 +11,10 @@ class Test extends abstractScope
      * @return array
      */
     public function index(){
-        print_r($this->request()->getSwoole());
+        foreach($this->request()->getSwoole()->connections as $fd)
+        {
+            $this->request()->getSwoole()->push($fd, "阿强" . date('Ymd His'));
+        }
         return ['hello world'];
     }
 
