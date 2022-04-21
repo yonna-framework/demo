@@ -1,5 +1,6 @@
 <?php
 
+
 use Yonna\IO\Config;
 
 Config::setCryptoProtocol(Config::env('IO_CRYPTO_PROTOCOL'));

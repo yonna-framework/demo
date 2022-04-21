@@ -11,7 +11,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $ResponseCollector = Yonna\Core::bootstrap(
     realpath(__DIR__ . '/../'),
-    'example',
+    '.env.example',
     Yonna\Bootstrap\BootType::AJAX_HTTP
 );
 

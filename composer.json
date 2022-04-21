@@ -1,41 +1,42 @@
 {
-  "name": "yonna/yonna",
-  "type": "project",
+  "authors": [
+    {
+      "email": "mzyhaohaoren@qq.com",
+      "name": "hunzsig"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "App/"
+    }
+  },
   "description": "A php project: yonna",
+  "homepage": "https://www.hunzsig.org",
   "keywords": [
     "yonna",
     "php",
     "framework",
     "demo"
   ],
-  "homepage": "https://www.hunzsig.org",
   "license": "MIT",
-  "authors": [
-    {
-      "name": "hunzsig",
-      "email": "mzyhaohaoren@qq.com"
-    }
-  ],
+  "name": "shanshan/fiane",
   "require": {
-    "php": "~7.3",
-    "yonna/core": "@dev",
-    "yonna/var-dumper": "@dev",
-    "yonna/database": "@dev",
-    "yonna/mapping": "@dev",
-    "yonna/event": "@dev",
-    "yonna/queue": "@dev",
-    "yonna/sdk": "@dev",
-    "yonna/log": "@dev",
-    "yonna/response": "@dev",
-    "yonna/throwable": "@dev",
-    "yonna/foundation": "@dev"
-  },
-  "require-dev": {
-    "swoole/ide-helper": "@dev"
+    "ext-curl": "*",
+    "ext-gd": "*",
+    "ext-json": "*",
+    "ext-mongodb": "*",
+    "ext-openssl": "*",
+    "ext-pdo": "*",
+    "ext-redis": "*",
+    "ext-simplexml": "*",
+    "ext-xmlrpc": "*",
+    "php": "~7.4",
+    "yonna/yonna": "@dev"
   },
   "scripts": {
-    "post-root-package-install": [
+    "post-install-cmd": [
       "@php -r \"file_exists('public/index.php') || copy('public/index.example.php', 'public/index.php');\""
     ]
-  }
+  },
+  "type": "project"
 }
